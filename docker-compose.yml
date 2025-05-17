@@ -1,10 +1,9 @@
 ---
-version: '3.9'
+version: "3.9"
 services:
-
   wiresocks:
     # image: ghcr.io/sensepost/wiresocks:latest
-    image: wiresocks-multi-tunnel
+    build: .
     # container_name: wiresocks
     mem_limit: 1gb
     memswap_limit: 2gb
