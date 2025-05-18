@@ -29,5 +29,5 @@ cat << EOF > /config/coredns/Corefile
         # force TCP
         force_tcp
     }
-
+}
 EOF
