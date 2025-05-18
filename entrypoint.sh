@@ -3,6 +3,11 @@
 # Modified version of 
 # https://github.com/xjasonlyu/tun2socks/blob/main/docker/entrypoint.sh
 
+# Force DNS to use TCP (use-vc)
+if ! grep -q '^options use-vc' /etc/resolv.conf 2>/dev/null; then
+    echo 'options use-vc' >> /etc/resolv.conf
+fi
+
 LOGLEVEL="${LOGLEVEL:-info}"
 TUN_IDX=0 # TUN starts with 0
 IP_TABLE_IDX=100 # IP Tables start with 100
