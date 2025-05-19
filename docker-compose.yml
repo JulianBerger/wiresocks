@@ -71,6 +71,8 @@ services:
       #- ./coredns:/config/coredns
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
+    dns:
+      - 208.67.222.222
     network_mode: service:wiresocks
     restart: unless-stopped
 
