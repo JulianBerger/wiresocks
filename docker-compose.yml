@@ -60,6 +60,7 @@ services:
       # These are just settings that get populated into the client configs, you can edit the config after creation
       - SERVERURL=${WG_HOST}
       - PEERS=${WG_PEERS}
+      - PEERDNS=208.67.222.222
       - INTERNAL_SUBNET=${WG_SUBNET_IP}
       - ALLOWEDIPS=${WG_SUBNET_IP}/24,${TARGET_ROUTES}
     volumes:
@@ -71,8 +72,6 @@ services:
       #- ./coredns:/config/coredns
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
-    dns:
-      - 208.67.222.222
     network_mode: service:wiresocks
     restart: unless-stopped
 
