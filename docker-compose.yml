@@ -60,7 +60,7 @@ services:
       # These are just settings that get populated into the client configs, you can edit the config after creation
       - SERVERURL=${WG_HOST}
       - PEERS=${WG_PEERS}
-      - PEERDNS=208.67.222.222
+      - PEERDNS=1.1.1.1
       - INTERNAL_SUBNET=${WG_SUBNET_IP}
       - ALLOWEDIPS=${WG_SUBNET_IP}/24,${TARGET_ROUTES}
     volumes:
