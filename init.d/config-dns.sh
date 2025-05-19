@@ -9,7 +9,7 @@ cat << EOF > /config/coredns/Corefile
 . {
     loop
     log
-    forward . ${TARGET_DNS_SERVER}:53 {
+    forward . /etc/resolv.conf {
         force_tcp
         policy sequential
     }
